@@ -9,13 +9,13 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/courier.php' => \config_path('tencent_cloud.php'),
+            dirname(__DIR__) . '/config/tencent_cloud.php' => config_path('tencent_cloud.php'),
         ], 'config');
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ ."../config/tencent_cloud.php", 'tencent_cloud');
+        $this->mergeConfigFrom(dirname(__DIR__) . "/config/tencent_cloud.php", 'tencent_cloud');
 
         $this->app->singleton(Service::class, function (Application $app) {
             $config = $app->make('config');
