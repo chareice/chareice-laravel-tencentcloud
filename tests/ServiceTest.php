@@ -9,13 +9,13 @@ use TencentCloud\Sms\V20210111\SmsClient;
 
 class ServiceTest extends TestCase
 {
-  public function test_tencent_cloud_service()
-  {
-    $service = new Service('test', 'test2', 'tests');
+    public function test_tencent_cloud_service()
+    {
+        $service = new Service('test', 'test2', 'tests');
 
-    $this->assertInstanceOf(OcrClient::class, $service->OcrClient());
-    $this->assertInstanceOf(SmsClient::class, $service->SmsClient());
-  }
+        $this->assertInstanceOf(OcrClient::class, $service->OcrClient());
+        $this->assertInstanceOf(SmsClient::class, $service->SmsClient());
+    }
 
     public function test_container_resolve()
     {
